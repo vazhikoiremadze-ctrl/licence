@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>მართვის თეორია B — სწავლა, იმიტაცია, ხრიკები, AI</title>
+<meta name="description" content="საქართველოს B კატეგორიის მართვის მოწმობის თეორიული გამოცდის სრული ბანკი: 921 ბილეთი, გამოცდის იმიტაცია, სასწავლო ხრიკები და AI ასისტენტი.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ffc83d'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23161a22' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23161a22'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#/">
+      <span class="brand-wheel" id="brand-wheel" aria-hidden="true"></span>
+      <span class="brand-text">
+        <strong>თეორია <em>B</em></strong>
+        <small>მართვის მოწმობის მომზადება</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#/" data-nav="home"><span class="ni" data-icon="home"></span>მთავარი</a>
+      <a href="#/learn" data-nav="learn"><span class="ni" data-icon="book"></span>სწავლა</a>
+      <a href="#/exam" data-nav="exam"><span class="ni" data-icon="clipboard"></span>იმიტაცია</a>
+      <a href="#/tricks" data-nav="tricks"><span class="ni" data-icon="wand"></span>ხრიკები</a>
+      <a href="#/ai" data-nav="ai"><span class="ni" data-icon="bot"></span>AI</a>
+    </nav>
+    <div class="nav-side">
+      <div class="nav-progress" title="ნასწავლი ბილეთები">
+        <svg viewBox="0 0 36 36" class="ring ring-sm"><circle class="ring-bg" cx="18" cy="18" r="15.5"></circle><circle class="ring-fg" id="nav-ring" cx="18" cy="18" r="15.5"></circle></svg>
+        <span class="nav-progress-num" id="nav-progress-num">0%</span>
+      </div>
+      <button class="btn btn-icon" id="btn-settings" title="პარამეტრები" aria-label="პარამეტრები"><span data-icon="gear"></span></button>
+      <button class="btn btn-icon nav-burger" id="btn-burger" aria-label="მენიუ"><span data-icon="menu"></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="view" class="view"></main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <strong>თეორია B</strong> — სასწავლო პლატფორმა B/B1 კატეგორიის თეორიული გამოცდისთვის.
+      <div class="footer-muted">ბილეთების ბაზა: 921 შეკითხვა (32 თემა). წყარო: teoria.on.ge — მონაცემები გამოიყენება მხოლოდ სასწავლო მიზნით. ოფიციალური ინფორმაცია: შსს სერვისების სააგენტო (sa.gov.ge).</div>
+    </div>
+    <div class="footer-links">
+      <a href="#/learn">სწავლა</a>
+      <a href="#/exam">იმიტაცია</a>
+      <a href="#/tricks">ხრიკები</a>
+      <a href="#/ai">AI</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-root" id="modal-root" hidden></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="js/data-bank.js"></script>
+<script src="js/data-patterns.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/store.js"></script>
+<script src="js/anim.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/learn.js"></script>
+<script src="js/exam.js"></script>
+<script src="js/tricks.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
