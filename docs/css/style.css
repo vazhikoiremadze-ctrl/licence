@@ -84,7 +84,6 @@ img{max-width:100%;display:block}
 .ring circle{fill:none;stroke-width:3.2}
 .ring-bg{stroke:rgba(255,255,255,.09)}
 .ring-fg{stroke:var(--amber);stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.2,.8,.2,1)}
-.nav-burger{display:none}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   background:var(--panel2);border:1px solid var(--line2);
@@ -111,6 +110,7 @@ img{max-width:100%;display:block}
 .btn-lg{padding:13px 24px;font-size:16px;border-radius:13px}
 .btn-sm{padding:6px 11px;font-size:13px;border-radius:9px}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.nav-burger{display:none}
 
 /* ---------- ხედი ---------- */
 .view{flex:1;width:100%;max-width:1200px;margin:0 auto;padding:26px 18px 60px}
@@ -371,7 +371,7 @@ label.fld{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
 .trick-body{font-size:14.5px;color:#c6cedd;line-height:1.65}
 .trick-body ul{margin:8px 0 8px 20px;display:grid;gap:5px}
 .trick-body li::marker{color:var(--amber)}
-.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.stat-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
 .stat-cell{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:10px 12px;text-align:center}
 .stat-cell b{display:block;font-size:21px;line-height:1.2}
 .stat-cell span{font-size:11.5px;color:var(--muted)}
@@ -391,6 +391,8 @@ label.fld{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
 .cheat-table tr:hover td{background:rgba(255,255,255,.025)}
 .cheat-table td:first-child{color:#e6ebf5;white-space:nowrap}
 .cheat-table td b{color:var(--amber)}
+.table-scroll{overflow-x:auto;padding-bottom:2px}
+.table-scroll::-webkit-scrollbar{height:6px}
 .honest-note{border-left:3px solid var(--amber);background:rgba(255,200,61,.07);border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;color:#d6dddf;margin-top:12px}
 
 /* ---------- AI ---------- */
@@ -478,25 +480,53 @@ label.fld{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
   .chat-card{height:560px}
   .mascot{width:96px;height:96px;right:20px;top:20px}
 }
+@media (min-width:750px) and (max-width:940px){
+  .nav-links a{font-size:0;gap:0;padding:9px 12px}
+}
 @media (max-width:760px){
+  .nav-inner{padding:10px 13px}
   .nav-links{
     position:fixed;top:60px;left:0;right:0;
     flex-direction:column;background:#12151e;border-bottom:1px solid var(--line2);
     padding:12px;gap:5px;display:none;z-index:59;box-shadow:var(--shadow);
   }
   .nav-links.open{display:flex}
+  .nav-links a{font-size:14.5px;gap:7px;padding:8px 13px}
   .nav-burger{display:inline-flex}
   .g3,.g2{grid-template-columns:1fr}
   .exam-rules{grid-template-columns:1fr}
-  .stat-strip{grid-template-columns:1fr 1fr}
   .view{padding:18px 13px 46px}
   .hero{padding:26px 20px 118px}
   .mascot{display:none}
-  .progress-hero{grid-template-columns:1fr;justify-items:center}
+  .progress-hero{grid-template-columns:1fr}
+  .progress-hero .ring-lg{justify-self:center}
+  .footer-inner{padding:18px 13px}
   .ticket{padding:15px}
   .exam-card{padding:18px}
   .hero-car{width:130px}
   .cheat-table{font-size:13px}
+}
+@media (max-width:560px){
+  .stat-strip{gap:7px}
+  .stat-cell{padding:9px 7px}
+  .stat-cell b{font-size:18px}
+  .stat-cell span{font-size:10.5px}
+  .psb-row{grid-template-columns:minmax(70px,110px) 1fr 40px;gap:9px 10px}
+}
+@media (max-width:480px){
+  .nav-inner{gap:12px}
+  .nav-side{gap:7px}
+  .brand-wheel{width:34px;height:34px;flex:0 0 34px}
+  .brand-text small{display:none}
+  .modal-root{padding:12px}
+  .quick-grid{gap:12px}
+  .quick-card{padding:16px}
+  .hero{padding:24px 18px 112px}
+  .hero-stats{gap:18px}
+  .hstat b{font-size:22px}
+}
+@media (max-width:400px){
+  .nav-progress{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s !important;transition-duration:.05s !important}

@@ -139,11 +139,11 @@
       ['საცხოვრებელი ზონა', '20 კმ/სთ', '515'],
       ['ეკონიშნის ზოლში (დასახლებულში)', '40–60 კმ/სთ', '224, 1273']
     ];
-    return '<table class="cheat-table"><thead><tr><th>სიტუაცია</th><th>მაქს. სიჩქარე</th><th>ბილეთები</th></tr></thead><tbody>' +
+    return '<div class="table-scroll"><table class="cheat-table"><thead><tr><th>სიტუაცია</th><th>მაქს. სიჩქარე</th><th>ბილეთები</th></tr></thead><tbody>' +
       rows.map(function (r) {
         var links = r[2].split(', ').map(function (id) { return '<button class="twin-link" data-goto="' + id + '">#' + id + '</button>'; }).join(' ');
         return '<tr><td>' + r[0] + '</td><td><b>' + r[1] + '</b></td><td>' + links + '</td></tr>';
-      }).join('') + '</tbody></table>';
+      }).join('') + '</tbody></table></div>';
   }
 
   function cheatDistTable() {
@@ -160,10 +160,10 @@
       ['ტვირთის გამოწევა გვერდზე', '0,4 მ-ზე მეტად — მოინიშნე', '586'],
       ['პულსის შემოწმება დაშავებულს', 'ყოველ 2 წუთში', '1071']
     ];
-    return '<table class="cheat-table"><thead><tr><th>წესი</th><th>მნიშვნელობა</th><th>ბილეთი</th></tr></thead><tbody>' +
+    return '<div class="table-scroll"><table class="cheat-table"><thead><tr><th>წესი</th><th>მნიშვნელობა</th><th>ბილეთი</th></tr></thead><tbody>' +
       rows.map(function (r) {
         return '<tr><td>' + r[0] + '</td><td><b>' + r[1] + '</b></td><td><button class="twin-link" data-goto="' + r[2] + '">#' + r[2] + '</button></td></tr>';
-      }).join('') + '</tbody></table>';
+      }).join('') + '</tbody></table></div>';
   }
 
   function templateRow(tpl) {
