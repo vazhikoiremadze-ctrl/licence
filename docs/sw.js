@@ -1,7 +1,7 @@
 /* ოფლაინ რეჟიმი: აპლიკაციის გარსი და ბილეთების ბაზა ქეშირდება, API მოთხოვნები პირდაპირ ქსელში მიდის */
 'use strict';
 
-var CACHE = 'teoriaB-v2';
+var CACHE = 'spot-v3';
 var CORE = [
   './',
   './index.html',

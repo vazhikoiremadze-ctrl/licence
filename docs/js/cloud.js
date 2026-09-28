@@ -388,7 +388,7 @@
       var blob = new Blob([Store.exportData()], { type: 'application/json' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'teoria-b-backup.json';
+      a.download = 'spot-backup.json';
       document.body.appendChild(a);
       a.click();
       a.remove();

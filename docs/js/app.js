@@ -536,7 +536,7 @@
           var blob = new Blob([Store.exportData()], { type: 'application/json' });
           var a = document.createElement('a');
           a.href = URL.createObjectURL(blob);
-          a.download = 'teoria-b-progresi.json';
+          a.download = 'spot-progresi.json';
           document.body.appendChild(a);
           a.click();
           a.remove();
