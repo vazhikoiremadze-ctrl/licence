@@ -207,7 +207,7 @@ label.fld{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
   0%{transform:translateX(0) scale(.9)}
   100%{transform:translateX(calc(100vw + 340px)) scale(.9)}
 }
-.traffic-light{position:absolute;left:34px;bottom:104px;width:34px;background:#10141b;border:1px solid var(--line2);border-radius:9px;padding:5px;display:flex;flex-direction:column;gap:5px}
+.traffic-light{position:absolute;left:34px;bottom:16px;width:34px;background:#10141b;border:1px solid var(--line2);border-radius:9px;padding:5px;display:flex;flex-direction:column;gap:5px}
 .traffic-light i{width:100%;aspect-ratio:1;border-radius:50%;background:#232b3a;display:block}
 .traffic-light i:nth-child(1){animation:tl1 6s infinite}
 .traffic-light i:nth-child(2){animation:tl2 6s infinite}

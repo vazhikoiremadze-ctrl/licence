@@ -97,14 +97,18 @@
     if (reduced) { el.textContent = to; return; }
     dur = dur || 900;
     var from = parseInt(el.textContent, 10) || 0;
+    var done = false;
+    function finish() { if (done) return; done = true; el.textContent = to; }
     var t0 = performance.now();
     function step(t) {
+      if (done) return;
       var k = Math.min(1, (t - t0) / dur);
       var e = 1 - Math.pow(1 - k, 3);
       el.textContent = Math.round(from + (to - from) * e);
-      if (k < 1) requestAnimationFrame(step);
+      if (k < 1) requestAnimationFrame(step); else finish();
     }
     requestAnimationFrame(step);
+    setTimeout(finish, dur + 300);
   }
 
   /* ---- სქროლზე გამოჩენა ---- */
