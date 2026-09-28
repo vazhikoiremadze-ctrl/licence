@@ -25,8 +25,16 @@
   state = Object.assign({}, defaults, state);
   state.settings = Object.assign({}, defaults.settings, state.settings || {});
 
+  var listeners = [];
+  function notify(reason) {
+    for (var i = 0; i < listeners.length; i++) {
+      try { listeners[i](reason); } catch (e) {}
+    }
+  }
+
   var saveTimer = null;
-  function save() {
+  function save(reason) {
+    notify(reason || 'local');
     if (saveTimer) return;
     saveTimer = setTimeout(function () {
       saveTimer = null;
@@ -79,12 +87,26 @@
     history: function () { return state.examHistory; },
 
     get: function (k) { return state.settings[k]; },
-    set: function (k, v) { state.settings[k] = v; save(); },
+    set: function (k, v) { state.settings[k] = v; save('settings'); },
+
+    onChange: function (fn) {
+      if (typeof fn === 'function') listeners.push(fn);
+    },
+
+    applyCloud: function (progress) {
+      if (!progress || typeof progress !== 'object') return;
+      state.learned = progress.learned || {};
+      state.wrong = progress.wrong || {};
+      state.bookmarks = progress.bookmarks || {};
+      state.seen = progress.seen || {};
+      state.examHistory = progress.examHistory || [];
+      save('cloud');
+    },
 
     reset: function () {
       state.learned = {}; state.wrong = {}; state.bookmarks = {};
       state.seen = {}; state.examHistory = [];
-      save();
+      save('reset');
     },
 
     exportData: function () {

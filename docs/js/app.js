@@ -607,6 +607,17 @@
   });
   window.addEventListener('hashchange', navigate);
 
-  window.App = { toast: toast, updateProgress: updateProgress, navigate: navigate, openSettings: openSettings };
+  window.App = { toast: toast, updateProgress: updateProgress, navigate: navigate, openSettings: openSettings, closeModal: closeModal };
+  Store.onChange(function (reason) {
+    if (reason !== 'cloud') return;
+    updateProgress();
+    if (modalRoot.hidden && parseHash().name === 'home') navigate();
+  });
+  if (window.Cloud) Cloud.init();
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () { /* ოფლაინ ქეში მიუწვდომელია */ });
+    });
+  }
   navigate();
 })();

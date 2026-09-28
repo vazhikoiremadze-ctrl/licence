@@ -49,7 +49,12 @@
     sparkle: '<path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/><path d="m5.6 5.6 2.8 2.8"/><path d="m15.6 15.6 2.8 2.8"/><path d="m18.4 5.6-2.8 2.8"/><path d="m8.4 15.6-2.8 2.8"/>',
     gauge: '<path d="M12 15.5 17 9"/><path d="M12 3a9 9 0 0 1 9 9c0 1.7-.5 3.3-1.3 4.6H4.3A8.9 8.9 0 0 1 3 12a9 9 0 0 1 9-9z"/>',
     ruler: '<rect x="2" y="8" width="20" height="8" rx="1.5"/><path d="M6 8v3"/><path d="M10 8v4"/><path d="M14 8v3"/><path d="M18 8v4"/>',
-    info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-5"/><path d="M12 8h0"/>'
+    info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-5"/><path d="M12 8h0"/>',
+    user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.1 3.6-6.5 8-6.5s8 2.4 8 6.5"/>',
+    cloud: '<path d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9z"/>',
+    cloudOff: '<path d="m2 2 20 20"/><path d="M9 5.4A7 7 0 0 1 20 11.9a4.4 4.4 0 0 1-.5 2.1"/><path d="M5.6 9.3A7 7 0 0 0 9 19h8.5"/>',
+    download: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
+    upload: '<path d="M12 21V9"/><path d="m7 14 5-5 5 5"/><path d="M5 3h14"/>'
   };
   function Icon(name, cls) {
     var d = P[name] || P.info;

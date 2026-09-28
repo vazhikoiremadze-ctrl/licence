@@ -502,3 +502,18 @@ label.fld{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
   *,*::before,*::after{animation-duration:.001s !important;transition-duration:.05s !important}
   .hero-car,.hero-road::before{animation:none}
 }
+
+/* ანგარიში და ღრუბლოვანი სინქრონიზაცია */
+.btn-account{position:relative}
+.btn-account .acc-avatar{width:18px;height:18px;border-radius:50%;display:block;object-fit:cover}
+.btn-account .acc-initials{width:18px;height:18px;border-radius:50%;background:var(--amber);color:#1a1f2e;font-size:10px;font-weight:800;display:grid;place-items:center}
+.btn-account .acc-dot{position:absolute;right:3px;bottom:3px;width:9px;height:9px;border-radius:50%;background:var(--green);border:2px solid #0e1116}
+.btn-account .acc-dot.busy{background:var(--amber);animation:accPulse 1s ease-in-out infinite}
+.btn-account .acc-dot.err{background:var(--red)}
+@keyframes accPulse{50%{opacity:.3}}
+.cloud-note{display:flex;gap:12px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.cloud-note>svg{width:20px;height:20px;flex:0 0 20px;color:var(--amber);margin-top:2px}
+.cloud-user{display:flex;align-items:center;gap:12px}
+.cloud-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:0 0 46px}
+.cloud-avatar-fallback{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--amber),#ff9f43);color:#1a1f2e;font-weight:800;display:grid;place-items:center;font-size:18px;flex:0 0 46px}
+.cloud-err{color:var(--red)}
